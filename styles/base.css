@@ -78,7 +78,7 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
 }
-.list{
+.course-list{
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -98,12 +98,16 @@ nav ul li a:hover {
     }
 }
 
-.completed {
-    background-color: #004080;
+.course.completed {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
 }
 
-.not-completed {
-    background-color: red;
+.course.not-completed {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
 }
 
 footer {
@@ -163,4 +167,39 @@ section h2{
 section {
     clear: both;
     margin-top: 20px;
+}
+.course-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.course {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+#total-credits {
+    font-weight: bold;
+    color: #333;
+}
+.course h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
 }
