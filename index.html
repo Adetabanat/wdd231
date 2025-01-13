@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 231 Web Frontend Development I ">
+    <meta name="description" content="WDD 231 Web Frontend Development I">
     <meta name="author" content="Daniel Adongo">
     <title>Daniel Adetaba Adongo</title>
     <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdatas.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="head">
-            <img src="/images/nat.png" alt="Daniel Adongo"> 
-            <h1><span>Daniel Adetaba Adongo</span> </h1>
+            <img src="/images/nat.png" alt="Daniel Adongo">
+            <h1><span>Daniel Adetaba Adongo</span></h1>
         </div>
         <nav>
             <ul>
@@ -23,54 +26,52 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="content">
-            <div class="course work">
-                <h2> Course Work</h2>
-            </div>
-              <div class="list">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+      <div class="flex-container">
+          <section class="content">
+              <div class="course-work">
+                  <h2>Course Work</h2>
               </div>
-
-        </section>
-        <section>
-          <div class="ghana">
-            <h2>Ghana Star of Africa</h2>
+              <div class="list">
+                  <ul>
+                      <li>Course 1</li>
+                      <li>Course 2</li>
+                      <li>Course 3</li>
+                      <li>Course 4</li>
+                      <li>Course 5</li>
+                  </ul>
+              </div>
+          </section>
+  
+          <section class="ghana">
+              <div class="coa">
+                  <h2>Ghana Star of Africa</h2>
+              </div>
+              <div class="pic1">
+                  <img src="/images/coat_of_arm.png" alt="coat of arm">
+                  <p>Ghana's coat of arms</p>
+              </div>
+          </section>
+      </div>
+  
+      <section>
+          <h2>Web and Computer Programming Certificate</h2>
+          <div class="buttons">
+              <button onclick="filterCourses('all')">All</button>
+              <button onclick="filterCourses('CSE')">CSE</button>
+              <button onclick="filterCourses('WDD')">WDD</button>
           </div>
-          <div class="pic1">
-            <img src="/images/coat_of_arm.png" alt="coat of arm">
-          </div>
-          <div class="pic1-caption">
-            <P>Ghana's coat of arms</P>
-          </div>
-        </section>
-          <div class="web">
-
-        
-          </div>
-          <div>
-
-          </div>
-          <div>
-
-          </div>
-        <section>
-
-
-        </section>
-
-    </main>
+          <div id="course-list"></div>
+          <p>Total Credits: <span id="total-credits">0</span></p>
+      </section>
+  </main>
+  
     <footer>
-        <p></p>
-        <p></p>
-        
-
+        <p>&copy; <span id="current-year"></span> Web Programming</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
+
 </body>
+
 </html>
