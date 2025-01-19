@@ -1,0 +1,145 @@
+body, h1, p, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+  header {
+    background-color: #333; 
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.logo img{
+    height: 50px; 
+    max-width: 100%; 
+    object-fit: contain;
+}
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    background: blue;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    padding: 10px; 
+  }
+  nav ul.show {
+    display: flex; 
+}
+  nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: yellowgreen;
+    color: #ecdbba;
+    border-radius: 5px
+  }
+  nav ul.active {
+    display: flex; 
+    flex-direction: column; 
+  }
+main.p{
+    background: bisque;
+
+}
+  #hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav ul.active {
+    display: flex; 
+    flex-direction: column; 
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+  }
+
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    #hamburger {
+        display: block; 
+    }
+
+    nav ul {
+        position: static;
+        display: none; 
+    }
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+    }
+
+    nav a {
+        padding: 10px 20px; 
+        font-size: 1rem;
+        justify-content: space-evenly;
+        
+        
+    }
+
+    #hamburger {
+        display: none; 
+    }
+}
+
+
+@media (min-width: 769px) {
+    main .figure {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on extra large screens */
+        gap: 5px;
+        margin: 20px;
+        display: grid;
+    }
+
+    main .figure img {
+        max-height: 300px; 
+    }
+}
+
