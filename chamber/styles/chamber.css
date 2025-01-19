@@ -1,145 +1,233 @@
-body, h1, p, ul, li, figure, figcaption {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Base Styles */
 body {
-    font-family: "Montserrat", serif;
-    font-weight: 400;
-    color: #333;
-    background-color: #f8f8f8;
-    line-height: 1.6;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+  margin: 0;
 }
-  header {
-    background-color: #333; 
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    gap: 20px;
-    justify-content: space-evenly;
-  }
 
-  header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+/* Header Styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.logo img{
-    height: 50px; 
-    max-width: 100%; 
-    object-fit: contain;
+
+.logo img {
+  height: 50px;
 }
-  h2 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    background: blue;
-  }
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
-  }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #1da1f2;
+}
+
+#hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Main Section */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #1da1f2;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-    padding: 10px; 
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0;
   }
-  nav ul.show {
-    display: flex; 
-}
-  nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 10px 15px;
-    text-align: center;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  nav a:hover {
-    background-color: yellowgreen;
-    color: #ecdbba;
-    border-radius: 5px
-  }
-  nav ul.active {
-    display: flex; 
-    flex-direction: column; 
-  }
-main.p{
-    background: bisque;
 
-}
+  nav ul.active {
+      display: flex;
+  }
+
   #hamburger {
-    font-size: 2rem;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    margin: 10px 0;
+      display: block;
   }
 
-  nav ul.active {
-    display: flex; 
-    flex-direction: column; 
-  }
   footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 20px;
+      grid-template-columns: 1fr;
   }
-
-  
-  footer a {
-    color: #fff;
-    text-decoration: none;
-  }
-  @media (max-width: 768px) {
-    #hamburger {
-        display: block; 
-    }
-
-    nav ul {
-        position: static;
-        display: none; 
-    }
 }
 
-@media (min-width: 769px) {
-    nav ul {
-        display: flex; 
-        flex-direction: row;
-        justify-content: center;
-        position: relative;
-    }
-
-    nav a {
-        padding: 10px 20px; 
-        font-size: 1rem;
-        justify-content: space-evenly;
-        
-        
-    }
-
-    #hamburger {
-        display: none; 
-    }
+#members-section {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  text-align: center;
 }
 
+.toggle-buttons {
+  margin-bottom: 1rem;
+}
 
-@media (min-width: 769px) {
-    main .figure {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns on extra large screens */
-        gap: 5px;
-        margin: 20px;
-        display: grid;
-    }
+.toggle-buttons button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-    main .figure img {
-        max-height: 300px; 
-    }
+.toggle-buttons button:hover {
+  background-color: #1da1f2;
+}
+
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.member-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.member-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.membership-level {
+  font-weight: bold;
+  color: #1da1f2;
+}
+.toggle-buttons button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.toggle-buttons button:hover {
+  background-color: #1da1f2;
+}
+
+#members-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.member-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  text-align: left;
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.member-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card a {
+  font-size: 1rem;
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.member-card a:hover {
+  text-decoration: underline;
+}
+
+.membership-level {
+  font-weight: bold;
+  color: #1da1f2;
 }
 

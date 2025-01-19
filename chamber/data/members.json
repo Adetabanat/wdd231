@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Sunrise Solutions",
+        "address": "123 Main St, Accra, Ghana",
+        "phone": "+233 24 123 4567",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "natLogo.png",
+        "membershipLevel": 3,
+        "description": "Leading software development company specializing in web applications."
+    },
+    {
+        "name": "Golden Farms",
+        "address": "456 Agri Ave, Kumasi, Ghana",
+        "phone": "+233 55 987 6543",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "naty.webp",
+        "membershipLevel": 2,
+        "description": "Organic farm producing high-quality agricultural products."
+    },
+    {
+        "name": "TechWave Inc.",
+        "address": "789 Silicon Valley, Tema, Ghana",
+        "phone": "+233 30 123 9876",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "natLogo.png",
+        "membershipLevel": 3,
+        "description": "Innovative tech company providing IT solutions worldwide."
+    },
+    {
+        "name": "Silver Linings Cafe",
+        "address": "12 Coffee St, Takoradi, Ghana",
+        "phone": "+233 20 333 4444",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "naty.webp",
+        "membershipLevel": 2,
+        "description": "Cozy cafe offering the best coffee and pastries in town."
+    },
+    {
+        "name": "Green Energy Ltd.",
+        "address": "44 Solar Dr, Cape Coast, Ghana",
+        "phone": "+233 27 555 6666",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "natLogo.png",
+        "membershipLevel": 3,
+        "description": "Renewable energy company promoting clean and affordable power."
+    },
+    {
+        "name": "Bright Future Education",
+        "address": "99 Knowledge Ln, Sunyani, Ghana",
+        "phone": "+233 50 777 8888",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "naty.webp",
+        "membershipLevel": 1,
+        "description": "Educational services provider helping students achieve their dreams."
+    },
+    {
+        "name": "AquaFresh Water",
+        "address": "77 Ocean Blvd, Sekondi, Ghana",
+        "phone": "+233 29 666 7777",
+        "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
+        "image": "natLogo.png",
+        "membershipLevel": 1,
+        "description": "Supplier of purified bottled water across Ghana."
+    }
+]
