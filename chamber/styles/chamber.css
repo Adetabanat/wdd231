@@ -218,8 +218,9 @@ footer a:hover {
 
 .member-card a {
   font-size: 1rem;
-  color: #1da1f2;
+  color: black;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .member-card a:hover {
@@ -228,6 +229,6 @@ footer a:hover {
 
 .membership-level {
   font-weight: bold;
-  color: #1da1f2;
+  color: black;
 }
 
