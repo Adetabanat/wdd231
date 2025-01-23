@@ -128,6 +128,20 @@ footer .social-media a:hover {
   .social-media a {
     font-size: 1.2rem;
   }
+  .hero {
+    flex-direction: row;
+    height: 400px;
+  }
+
+  .spotlights {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .spotlight {
+    flex: 1;
+    margin: 0 1rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -142,6 +156,12 @@ footer .social-media a:hover {
   .social-media a {
     font-size: 1rem;
   }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
 }
 
 /* Members Section Styles */

@@ -1,79 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 231 Web Frontend Development I">
+    <meta name="description" content="chamber site">
     <meta name="author" content="Daniel Adongo">
-    <title>Daniel Adetaba Adongo</title>
+    <meta property="og:title" content="GitHub - Adetabanat/wdd231">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content=https://raw.githubusercontent.com/adetabanat/wdd231/refs/heads/main/chamber/images/natLogo.png>
+    <meta property="og:url" content="https://adetabanat.github.io/wdd231/chamber/index.html">
+    <title>Daniel Chamber of Commerce</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">
-    <script src="scripts/getdatas.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/chamber2.css">
+    <script src="scripts/chamber.js" defer></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
-
 <body>
     <header>
-        <div class="head">
-            <img src="images/naty.webp" alt="Daniel Adongo">
-            <h1><span>Daniel Adetaba Adongo</span></h1>
+        <div class="logo"> 
+            <img src="images/natLogo.png" alt="nat solution logo">
         </div>
-        <nav>
+  
+        <div> 
+          <span id="hamburger">=</span>
+        </div> 
+        <div>
+          <nav> 
             <ul>
-                <li><a href="#" tabindex="1">Home</a></li>
-                <li><a href="https://github.com/Adetabanat/wdd-231" target="_blank" tabindex="2">GitHub Profile</a></li>
-                <li><a href="#" tabindex="3">Chamber</a></li>
-                <li><a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/" target="_blank" tabindex="4">LinkedIn Profile</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Discovery</a></li>
+              <li><a href="#">Join</a></li>
+              <li><a href="#">Directory</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="flex-container">
-            <section class="content">
-                <div class="course-work">
-                    <h2>Course Work</h2>
-                </div>
-                <div class="course-list">
-                    <ul>
-                        <li>Introduction to Programming</li>
-                        <li>Web Fundamentals</li>
-                        <li>Programming with Function</li>
-                        <li>Programming with Classes</li>
-                        <li>Web and Computer Programming</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <div>
-                    <h2>Ghana Star of Africa</h2>
-                </div>
-                <div class="pic1">
-                    <img src="/chamber/images/coat_of_arm1.webp" alt="Ghana's coat of arms">
-                    <p>Ghana's coat of arms</p>
-                </div>
-            </section>
+          </nav>
         </div>
-
-        <section>
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="buttons">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
+    </header>
+    <main>
+        <section class="toggle">
+          <h1> Daniel Chamber of Commerce </h1>
+           <div class="toggle-buttons">
+             <button id="grid-view">Grid View</button>
+             <button id="list-view">List View</button>
             </div>
-            <div id="course-list" class="course-list-container"></div>
-            <p>Total Credits: <span id="total-credits">0</span></p>
         </section>
+        <section class="hero">
+           <img src="images/hero.webp" alt="Cocoa from Ghana" class="hero-image">
+          <div class="hero-content">
+            <h1>Welcome to [City] Chamber of Commerce</h1>
+            <p>Supporting local businesses and the community.</p>
+            <a href="join.html" class="cta-button">Join Us Today!</a>
+          </div>
+        </section>
+        <section class="weather">
+            <h2>Local Weather</h2>
+            <p>Current Temperature: 75°F, Sunny</p>
+        </section>
+          
+      
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+              <li>
+                <strong>Business Networking Breakfast:</strong> February 15, 2025 - 9:00 AM
+              </li>
+              <li>
+                <strong>Local Business Fair:</strong> March 10, 2025 - All Day
+              </li>
+            </ul>
+        </section>
+          
+        <section class="spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight">
+              <img src="images/business1.jpg" alt="Business 1">
+              <h3>Local Bakery</h3>
+              <p>Offering fresh, homemade bread and pastries daily.</p>
+            </div>
+            <div class="spotlight">
+              <img src="images/business2.jpg" alt="Business 2">
+              <h3>Tech Solutions</h3>
+              <p>Innovative technology services for small businesses.</p>
+            </div>
+          </section>
+          
     </main>
-
     <footer>
-        <p>&copy; <span id="current-year"></span> Daniel Adongo • Ghana</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
-    </footer>
+      <div class="footer-address">
+          <p>Daniel Chamber of Commerce</p>
+          <p>St Augustine's College, Ghana</p>
+          <p>0244734362</p>
+          <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
+      </div>
+      <div class="social-media">
+          <a href="https://web.facebook.com/daniel.nat1" target="_blank">Facebook</a>
+          <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank">LinkedIn</a>
+          <a href="https://github.com/Adetabanat/wdd231" target="_blank">GitHub</a>
+      </div>
+      <div>
+          <p>WDD 231 Class Project</p>
+          <p>&copy; <span id="currentyear"></span> All rights reserved</p>
+          <p id="lastModified"></p>
+      </div>
+  </footer>
 </body>
-
+</html>
+</body>
 </html>
