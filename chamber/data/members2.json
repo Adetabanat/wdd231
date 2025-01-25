@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Local Bakery",
+        "logo": "images/bakery.jpg",
+        "tagline": "Fresh Bread Daily",
+        "email": "contact@localbakery.com",
+        "phone": "123-456-7890",
+        "website": "http://localbakery.com",
+        "level": "Gold"
+    },
+    {
+        "name": "Tech Solutions",
+        "logo": "images/tech.jpg",
+        "tagline": "Innovative Technology Services",
+        "email": "info@techsolutions.com",
+        "phone": "987-654-3210",
+        "website": "http://techsolutions.com",
+        "level": "Silver"
+    }
+]

@@ -8,13 +8,13 @@ body {
   header {
     background-color: #333;
     color: white;
-    padding: 1rem 2rem;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .logo img {
-    height: 50px;
+    max-width: 100px;
   }
   
   nav ul {
@@ -43,12 +43,6 @@ body {
     list-style: none;
     padding: 0;
   }
-  .hero {
-    background: url('../images/hero.webp') no-repeat center/cover;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
   .weather, .events, .spotlights {
     padding: 1rem;
     margin: 1rem auto;
@@ -61,17 +55,41 @@ body {
     color: #0073e6;
   }  
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('../images/hero.jpg') no-repeat center/cover;
-    color: white;
+    position: relative;
     text-align: center;
-    padding: 2rem 1rem;
-    height: 300px;
-  }
+    color: white;
+    position: relative;
   
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hero .cta-button {
+    
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+section {
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .toggle-buttons button {
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
@@ -107,11 +125,11 @@ body {
     text-align: center;
   }
   
-  footer a {
+  footer .social-media a {
     color: white;
     text-decoration: none;
-  }
-  
+    margin: 0 1rem;
+}
   footer a:hover {
     color: #1da1f2;
   }
@@ -132,16 +150,16 @@ body {
   footer .social-media a:hover {
     color: #1da1f2;
   }
-  .cta-button {
-    display: inline-block;
-    background-color: #0073e6;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    border-radius: 5px;
-  }
-  .events, .weather, .spotlights {
+  
+  .weather, .events, .spotlights {
     padding: 1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    background: #f9f9f9;
+    border-radius: 10px;
+  }
+  .events ul li{
+    list-style: none;
   }
   .spotlight {
     display: flex;
@@ -149,11 +167,17 @@ body {
     align-items: center;
     margin-bottom: 1rem;
   }  
+  .spotlight-container {
+    display: flex;
+    gap: 20px;
+}
   @media screen and (max-width: 769px) {
-    .footer-address p {
+    .footer-content p {
       font-size: 0.9rem;
     }
-  
+    nav ul {
+      flex-direction: column;
+  }
     .social-media {
       gap: 1rem;
     }
@@ -166,21 +190,14 @@ body {
         height: 400px;
       }
     
-      .spotlights {
-        display: flex;
-        justify-content: space-between;
-      }
-    
-      .spotlight {
-        flex: 1;
-        margin: 0 1rem;
-      }
+      
+      
     
 
   }
 
   @media screen and (max-width: 480px) {
-    .footer-address p {
+    .footer-content p {
       font-size: 0.8rem;
     }
   
