@@ -13,7 +13,7 @@
         "address": "456 Agri Ave, Kumasi, Ghana",
         "phone": "+233 55 987 6543",
         "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
-        "image": "naty.webp",
+        "image": "natLogo.png",
         "membershipLevel": 2,
         "description": "Organic farm producing high-quality agricultural products."
     },
@@ -31,7 +31,7 @@
         "address": "12 Coffee St, Takoradi, Ghana",
         "phone": "+233 20 333 4444",
         "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
-        "image": "naty.webp",
+        "image": "natLogo.png",
         "membershipLevel": 2,
         "description": "Cozy cafe offering the best coffee and pastries in town."
     },
@@ -49,7 +49,7 @@
         "address": "99 Knowledge Ln, Sunyani, Ghana",
         "phone": "+233 50 777 8888",
         "website": "https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0/",
-        "image": "naty.webp",
+        "image": "natLogo.png",
         "membershipLevel": 1,
         "description": "Educational services provider helping students achieve their dreams."
     },
