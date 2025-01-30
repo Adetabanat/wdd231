@@ -183,90 +183,77 @@ footer div {
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
   padding: 1rem;
 }
 
-.weather-card, .events, #spotlight-container {
+.weather-card, .events, .spotlight {
   background: #fff;
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
 }
 
-/* Spotlight Section */
-#spotlight-cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
-.spotlight-card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 30%;
-  box-sizing: border-box;
-}
 
-.spotlight-card img {
-  width: 100%;
-  height: auto;
-}
-
-.spotlight-card h3 {
-  font-size: 1.5em;
-}
-
-.spotlight-card p {
-  margin: 10px 0;
-}
-
-/* Grid Styles */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
+/* Business Card Styles */
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card h2 {
-  font-size: 1.25rem;
-  margin: 10px 0;
-  color: #333;
+/* Business Image */
+.card .busimg {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }
 
+/* Headings */
+.card h3 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Text Styling */
 .card p {
-  color: #666;
+  font-size: 1rem;
   margin: 5px 0;
 }
 
 .card a {
-  color: #007bff;
   text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
 }
 
 .card a:hover {
   text-decoration: underline;
 }
+
+#buscard, .spotlight-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -358,6 +345,13 @@ footer div {
   .weather-card, .events, #spotlight-container {
     flex: 1;
   }
+    #buscards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 15px;
+    }
 }
 
 @media (min-width: 1024px) {

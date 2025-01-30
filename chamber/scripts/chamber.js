@@ -54,36 +54,43 @@ async function fetchMembers(view = "grid") {
   }
 }
 
+
+
 function displayMembers(members, view) {
-  membersContainer.innerHTML = ""; // Clear existing content
-  membersContainer.className = view === "grid" ? "grid-view" : "list-view"; // Set the container class
+  const spotlightContainer = document.querySelector(".spotlight"); // Select the spotlight container
+  if (!spotlightContainer) {
+    console.error("Error: Spotlight container not found.");
+    return;
+  }
+
+  spotlightContainer.innerHTML = ""; // Clear existing content
+  spotlightContainer.className = `spotlight ${view === "grid" ? "grid-view" : "list-view"}`; // Update class
 
   members.forEach((member) => {
     // Create a member card element
     const memberCard = document.createElement("div");
     memberCard.classList.add("member-card");
 
+    // Ensure member image is valid
+    const imageSrc = member.image ? `images/${member.image}` : "images/default.jpg";
+    const websiteLink = member.website ? `<a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>` : "";
+
+    // Ensure membership level mapping is safe
+    const membershipLevels = ["Member", "Silver", "Gold"];
+    const membershipLevel = membershipLevels[member.membershipLevel - 1] || "Unknown";
+
     // Populate the member card with data
     memberCard.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name}" class="member-image">
-      <h3>${member.name}</h3>
-      <p>${member.description}</p>
-      <p>${member.address}</p>
-      <p>${member.phone}</p>
-      <a href="${member.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      <p class="membership-level">Membership Level: ${["Member", "Silver", "Gold"][member.membershipLevel - 1]}</p>
+      <img src="${imageSrc}" alt="${member.name || "Member"}" class="member-image">
+      <h3>${member.name || "Unknown"}</h3>
+      <p>${member.description || "No description available."}</p>
+      <p>${member.address || "Address not provided."}</p>
+      <p>${member.phone || "Phone number unavailable."}</p>
+      ${websiteLink}
+      <p class="membership-level">Membership Level: ${membershipLevel}</p>
     `;
 
     // Append the card to the container
-    membersContainer.appendChild(memberCard);
+    spotlightContainer.appendChild(memberCard);
   });
 }
-
-// Attach event listeners to the grid and list view buttons
-if (gridViewButton && listViewButton) {
-  gridViewButton.addEventListener("click", () => fetchMembers("grid"));
-  listViewButton.addEventListener("click", () => fetchMembers("list"));
-}
-
-// Fetch and display members on page load
-fetchMembers();
