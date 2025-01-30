@@ -1,10 +1,10 @@
 /* Global Styles */
 :root {
   --primary-color: darkblue;
-  --secondary-color: #ffbe37;
+  --secondary-color: whitesmoke;
   --tertiary-color: black;
   --default-color: #eef0f4;
-  --optional-color: #d68c45;
+  --optional-color:lightblue;
   --optional2-color: #f90a39;
 }
 
@@ -36,7 +36,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:darkblue;
+  background-color:var(--primary-color);
   color: whitesmoke;
   padding: 15px;
 }
@@ -117,7 +117,7 @@ section-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: var(--text-color);
+  color: var(--tertiary-color);
 }
 
 /* Footer Styles */
@@ -206,7 +206,7 @@ footer div {
 }
 
 .cta-button:hover {
-  background-color: whitesmoke;
+  background-color: var(--optional2-color);
 }
 
 
@@ -359,11 +359,15 @@ footer div {
     flex-direction: row;
     text-align: left;
     padding: 3rem;
+    margin: 0;
+    
   }
 
   .hero-image {
     width: 50%;
     height: auto;
+    margin: 0;
+    padding: 0;
   }
 
   .hero-content {
