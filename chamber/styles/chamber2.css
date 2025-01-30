@@ -1,11 +1,11 @@
 /* Global Styles */
 :root {
-  --primary-red: #B22222;   /* Darker Red for better contrast */
-  --primary-green: #006400; /* Dark Green for improved readability */
-  --white: #FFFFFF;
-  --black: #1A1A1A; /* Darker black for stronger text contrast */
-  --gray: #E0E0E0; /* Softer gray for background contrast */
-  --font-main: 'Montserrat', sans-serif;
+  --primary-color: darkblue;
+  --secondary-color: #ffbe37;
+  --tertiary-color: #edeefd;
+  --default-color: #eef0f4;
+  --optional-color: #d68c45;
+  --optional2-color: #f90a39;
 }
 
 /* General reset */
@@ -19,8 +19,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  background-color: var(--gray);
-  color: var(--dark-color);
+  background-color: var(--default-color);
+  color: var(--text-color);
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -29,18 +29,20 @@ body {
 .wayfinding {
   text-align: left;
   font-size: large;
-  color: #2974a6;
+  color: black;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-green);
-  color: var(--neutral-color);
+  background-color:darkblue;
+  color: whitesmoke;
   padding: 15px;
 }
-
+h2{
+  text-align: center;
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -57,19 +59,19 @@ body {
 }
 
 .nav-links li a {
-  color: var(--neutral-color);
+  color: whitesmoke;
   text-decoration: none;
   transition: color 0.3s;
   font-weight: bold;
 }
 
 .nav-links li a:hover {
-  color: #00bcd4;
+  color: black;
 }
 
 .nav-links li a.active {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: black;
+  color:whitesmoke;
   font-weight: bold;
 }
 
@@ -115,6 +117,7 @@ section-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: var(--text-color);
 }
 
 /* Footer Styles */
@@ -124,8 +127,8 @@ section-title {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: var(--primary-green);
-  color: var(--neutral-color);
+  background: darkblue;
+  color: white;
   padding: 15px;
 }
 
@@ -137,7 +140,7 @@ footer div {
 }
 
 .footer a {
-  color: var(--light-gray);
+  color: var(--text-color);
   text-decoration: none;
   margin: 0 5px;
 }
@@ -172,9 +175,9 @@ footer div {
 .hero {
     position: relative;
     text-align: center;
-    color: var(--gray);
+    color: whitesmoke;
     justify-content: center;
-    
+    background-color:darkblue;
 }
 
 
@@ -195,15 +198,15 @@ footer div {
 
 .cta-button {
   display: inline-block;
-  background-color: var(--primary-red);
-  color: var(--white);
+  background-color: darkblue;
+  color: whitesmoke;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .cta-button:hover {
-  background-color: var(--primary-green);
+  background-color: whitesmoke;
 }
 
 
@@ -218,7 +221,7 @@ footer div {
 .events,.empty
 {
   background: var(--neutral-color);
-  border: 1px solid #ddd;
+  border: 1px solid black;
   padding: 1rem;
   border-radius: 8px;
 }
@@ -231,7 +234,7 @@ footer div {
 }
 
 .card h2 {
-  background: var(--dark-color);
+  background: var(--primary-color);
   color: var(--neutral-color);
   padding: 10px;
   text-align: center;
@@ -259,6 +262,7 @@ footer div {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
     text-align: center;
 }
 
@@ -277,9 +281,10 @@ footer div {
 }
 
 /* Card Title */
-.spotlight-card h3 {
+.spotlight-card h2 {
   font-size: 1em;
   margin: 0;
+  justify-content: center;
 }
 
 /* Card Paragraphs */
@@ -358,6 +363,7 @@ footer div {
 
   .hero-image {
     width: 50%;
+    height: auto;
   }
 
   .hero-content {
