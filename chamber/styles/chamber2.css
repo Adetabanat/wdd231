@@ -1,3 +1,13 @@
+/* Global Styles */
+:root {
+  --primary-red: #B22222;   /* Darker Red for better contrast */
+  --primary-green: #006400; /* Dark Green for improved readability */
+  --white: #FFFFFF;
+  --black: #1A1A1A; /* Darker black for stronger text contrast */
+  --gray: #E0E0E0; /* Softer gray for background contrast */
+  --font-main: 'Montserrat', sans-serif;
+}
+
 /* General reset */
 * {
   margin: 0;
@@ -9,23 +19,26 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: #333;
-  background-color: #f8f8f8;
+  background-color: var(--gray);
+  color: var(--dark-color);
   line-height: 1.6;
   margin: 0;
+  padding: 0;
 }
-.wayfinding{
+
+.wayfinding {
   text-align: left;
   font-size: large;
   color: #2974a6;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
+  background-color: var(--primary-green);
+  color: var(--neutral-color);
+  padding: 15px;
 }
 
 .logo {
@@ -44,9 +57,10 @@ body {
 }
 
 .nav-links li a {
+  color: var(--neutral-color);
   text-decoration: none;
-  color: white;
   transition: color 0.3s;
+  font-weight: bold;
 }
 
 .nav-links li a:hover {
@@ -54,7 +68,7 @@ body {
 }
 
 .nav-links li a.active {
-  background-color: #00bcd4;
+  background-color: var(--secondary-color);
   color: white;
   font-weight: bold;
 }
@@ -95,10 +109,12 @@ body {
 
 /* Main Section */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
+}
+section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* Footer Styles */
@@ -108,9 +124,9 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #333;
-  color: #ecf0f1;
-  font-family: Arial, sans-serif;
+  background: var(--primary-green);
+  color: var(--neutral-color);
+  padding: 15px;
 }
 
 footer div {
@@ -121,7 +137,7 @@ footer div {
 }
 
 .footer a {
-  color: #2974a6;
+  color: var(--light-gray);
   text-decoration: none;
   margin: 0 5px;
 }
@@ -144,29 +160,33 @@ footer div {
 }
 
 .footer .social-media a:hover {
-  background-color: #3498db;
+  background-color: var(--dark-color);
   color: #ecf0f1;
 }
 
 /* Main content styles */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #f5f5f5;
-}
-
 .hero-image {
   width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
+  height: auto;
+}
+.hero {
+    position: relative;
+    text-align: center;
+    color: var(--gray);
+    justify-content: center;
+    
 }
 
-.hero-content h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 8px;
+  
 }
 
 .hero-content p {
@@ -175,12 +195,17 @@ footer div {
 
 .cta-button {
   display: inline-block;
-  background-color: #003366;
-  color: white;
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 4px;
 }
+
+.cta-button:hover {
+  background-color: var(--primary-green);
+}
+
 
 .main-container {
   display: grid;
@@ -189,71 +214,79 @@ footer div {
   padding: 1rem;
 }
 
-.weather-card, .events, .spotlight {
-  background: #fff;
+.weather-card,
+.events,.empty
+{
+  background: var(--neutral-color);
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
 }
-
-
-
-/* Business Card Styles */
 .card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Business Image */
-.card .busimg {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-}
-
-/* Headings */
-.card h3 {
-  font-size: 1.5em;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-/* Text Styling */
-.card p {
-  font-size: 1rem;
-  margin: 5px 0;
-}
-
-.card a {
-  text-decoration: none;
-  color: var(--secondary-color);
-  font-weight: bold;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-#buscard, .spotlight-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  margin: 20px;
-  border: 1px solid black;
+  flex: 1;
+  background: var(--neutral-color);
+  padding: 15px;
   border-radius: 8px;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.card h2 {
+  background: var(--dark-color);
+  color: var(--neutral-color);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Weather Pseudo-element */
+.weather h2::after {
+  content: '\2601'; /* Cloud icon */
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+/* Spotlight Container */
+.spotlight-container {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/* Spotlight Card */
+.spotlight-card {
+  flex: 1;
+    background: var(--neutral-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Hover effect */
+.spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.spotlight-card img {
+  width: 80px; /* Full width */
+  border-radius: 50%; /* Circular image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0;
+}
+
+/* Card Title */
+.spotlight-card h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Card Paragraphs */
+.spotlight-card p {
+  font-size: 0.5em;
+  margin: 0;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -264,7 +297,6 @@ footer div {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #444;
     position: absolute;
     top: 60px;
     right: 0;
@@ -342,16 +374,17 @@ footer div {
     gap: 2rem;
   }
 
-  .weather-card, .events, #spotlight-container {
-    flex: 1;
+  .weather-card, .events,.empty,.business-list {
+    flex-direction: column;
   }
-    #buscards {
-        grid-template-columns: 1fr;
-    }
 
-    .card {
-        padding: 15px;
-    }
+  #buscards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
 }
 
 @media (min-width: 1024px) {

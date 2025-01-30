@@ -1,43 +1,178 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-      const response = await fetch('data/members.json');
-      const data = await response.json();
+// Set current year and last modified date
+const currentYearElement = document.getElementById("currentyear");
+if (currentYearElement) {
+  currentYearElement.textContent = new Date().getFullYear();
+}
 
-      function getRandomOrganizations(data) {
-          // Filter only level 2 and 3 members
-          const filteredOrgs = data.filter(org => org.membershipLevel === 2 || org.membershipLevel === 3);
+const lastModifiedElement = document.getElementById("lastModified");
+if (lastModifiedElement) {
+  lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
+}
 
-          const randomOrgs = [];
-          
-          while (randomOrgs.length < 3 && filteredOrgs.length > 0) {
-              const randomIndex = Math.floor(Math.random() * filteredOrgs.length);
-              randomOrgs.push(filteredOrgs[randomIndex]);
-              filteredOrgs.splice(randomIndex, 1); // Remove selected org
-          }
+// Select the hamburger button and navigation links
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
 
-          return randomOrgs;
-      }
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
+}
 
-      const selectedOrgs = getRandomOrganizations(data);
+// Highlight active navigation link
+const currentLocation = window.location.pathname.split("/").pop();
+const navItems = document.querySelectorAll("#nav-links a");
 
-      const buscards = document.getElementById('buscards');
-
-      selectedOrgs.forEach(org => {
-          const companySection = document.createElement('section');
-          companySection.className = 'card';
-          companySection.innerHTML = `
-              <h3 class="name">${org.name}</h3>
-              <hr>
-              <img class="busimg" src="images/${org.image}" alt="${org.name} Logo">
-              <p class="phone"><strong>Phone:</strong> ${org.phone}</p>
-              <p class="url"><strong>URL:</strong> <a href="${org.website}" target="_blank">${org.website}</a></p>
-              <p class="address"><strong>Address:</strong> ${org.address}</p>
-              <p class="level"><strong>Member Level:</strong> ${org.membershipLevel}</p>
-          `;
-          buscards.appendChild(companySection);
-      });
-
-  } catch (error) {
-      console.error('Error fetching organizations:', error);
+navItems.forEach((item) => {
+  if (item.getAttribute("href") === currentLocation) {
+    item.classList.add("active");
+  } else {
+    item.classList.remove("active");
   }
 });
+
+// OpenWeatherMap API Key and URL
+const apiKey = "05b955313b7fd4b1aa06fa1873c92340";
+const latitude = "5.1247745930521"; // Cape Coast, Ghana
+const longitude = "-1.2707352821394184";
+const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+const forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+// DOM Elements
+const townElement = document.getElementById("town");
+const graphicElement = document.getElementById("graphic");
+const descriptionElement = document.getElementById("description");
+const temperatureElement = document.getElementById("temperature");
+const eventsListElement = document.getElementById("events-list");
+
+// Fetch current weather data
+async function fetchCurrentWeather() {
+  try {
+    const response = await fetch(currentWeatherUrl);
+    if (!response.ok) throw new Error("Failed to fetch current weather data");
+
+    const data = await response.json();
+    updateCurrentWeather(data);
+  } catch (error) {
+    console.error("Error fetching current weather:", error);
+    if (descriptionElement) {
+      descriptionElement.textContent = "Unable to fetch current weather.";
+    }
+  }
+}
+
+// Fetch 3-day forecast data
+async function fetchWeatherForecast() {
+  try {
+    const response = await fetch(forecastWeatherUrl);
+    if (!response.ok) throw new Error("Failed to fetch forecast data");
+
+    const data = await response.json();
+    updateWeatherForecast(data);
+  } catch (error) {
+    console.error("Error fetching weather forecast:", error);
+    if (eventsListElement) {
+      eventsListElement.innerHTML = `<li>Unable to fetch forecast data.</li>`;
+    }
+  }
+}
+
+// Update current weather card
+function updateCurrentWeather(data) {
+  if (!data || !data.weather || !data.main) {
+    console.error("Invalid weather data:", data);
+    return;
+  }
+
+  const currentTemp = Math.round(data.main.temp ?? 0);
+  const currentDescription = data.weather[0]?.description ?? "No data";
+  const weatherIcon = data.weather[0]?.icon
+    ? `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    : "";
+
+  if (townElement) townElement.textContent = data.name ?? "Unknown";
+  if (graphicElement) {
+    graphicElement.src = weatherIcon;
+    graphicElement.alt = currentDescription;
+  }
+  if (descriptionElement)
+    descriptionElement.textContent = capitalizeFirstLetter(currentDescription);
+  if (temperatureElement)
+    temperatureElement.textContent = `${currentTemp}°C`;
+}
+
+// Update 3-day forecast
+function updateWeatherForecast(data) {
+  if (!data || !data.list) {
+    console.error("Invalid forecast data:", data);
+    return;
+  }
+
+  const forecast = [];
+  const forecastList = data.list.filter((item) =>
+    item.dt_txt.includes("12:00:00")
+  ); // Get midday forecasts
+
+  forecastList.slice(0, 3).forEach((item) => {
+    const date = new Date(item.dt_txt).toLocaleDateString(undefined, {
+      weekday: "long",
+    });
+    const temp = Math.round(item.main.temp);
+    const description = capitalizeFirstLetter(item.weather[0].description);
+    forecast.push(`<li>${date}: ${temp}°C, ${description}</li>`);
+  });
+
+  if (eventsListElement) eventsListElement.innerHTML = forecast.join("");
+}
+
+// Capitalize the first letter of a string
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Initialize weather data fetch
+fetchCurrentWeather();
+fetchWeatherForecast();
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('data/members.json');
+        const data = await response.json();
+
+        function getRandomOrganizations(data) {
+            // Filter only level 2 and 3 members
+            const filteredOrgs = data.filter(org => org.membershipLevel === 2 || org.membershipLevel === 3);
+            const randomOrgs = [];
+
+            while (randomOrgs.length < 3 && filteredOrgs.length > 0) {
+                const randomIndex = Math.floor(Math.random() * filteredOrgs.length);
+                randomOrgs.push(filteredOrgs[randomIndex]);
+                filteredOrgs.splice(randomIndex, 1); // Remove selected org
+            }
+
+            return randomOrgs;
+        }
+
+        const selectedOrgs = getRandomOrganizations(data);
+        const buscards = document.getElementById('buscards');
+
+        selectedOrgs.forEach(org => {
+            const card = document.createElement('div');
+            card.className = 'spotlight-card';
+            card.innerHTML = `
+                <img src="images/${org.image}" alt="${org.name} Logo">
+                <h3>${org.name}</h3>
+                <p><strong>Phone:</strong> ${org.phone}</p>
+                <p><strong>URL:</strong> <a href="${org.website}" target="_blank">${org.website}</a></p>
+                <p><strong>Address:</strong> ${org.address}</p>
+                <p><strong>Member Level:</strong> ${org.membershipLevel}</p>
+            `;
+            buscards.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error('Error fetching organizations:', error);
+    }
+});
+
