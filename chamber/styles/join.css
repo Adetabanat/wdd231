@@ -69,6 +69,7 @@
   .nav-links li a.active {
     color: white;
     font-weight: bold;
+    background-color: #333;
   
   }
   
@@ -141,16 +142,23 @@
 .join-container {
   display: grid;
   align-items: center;
+  grid-template-columns: 1fr 1fr; /* Form on left, Membership on right */
+  gap: 30px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
 
 }
 
 .form-box {
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 500px;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   
 }
 label {
     display: block;
@@ -176,7 +184,7 @@ input, select, textarea {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: darkblue;
+    background-color: var(--primary-color);
     color: white;
     font-size: 1rem;
     border: none;
@@ -186,7 +194,7 @@ input, select, textarea {
   }
   
   button:hover {
-    background-color: #DA291C;
+    background-color: var(--optional2-color);
   }
   
 
@@ -194,19 +202,14 @@ input, select, textarea {
 .membership-cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
-  margin-top: 20px;
-  opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
   animation: fadeInUp 1s ease-in-out forwards;
-  justify-content: flex-start; /* Align to the left in large screens */
 }
 
 
 .card {
-  width: 90%;
   max-width: 350px;
   background: white;
   padding: 15px;
@@ -215,7 +218,6 @@ input, select, textarea {
   text-align: center;
   cursor: pointer;
   transform: translateY(20px);
-  opacity: 0;
   animation: fadeInUp 1s forwards;
   font-size: smaller;
 }
@@ -327,7 +329,9 @@ input, select, textarea {
     .hamburger {
       display: flex;
     }
-  
+    .join-container {
+      grid-template-columns: 1fr; /* Stack form and membership levels */
+  }
     .nav-links {
       display: none;
       flex-direction: column;
@@ -365,7 +369,8 @@ input, select, textarea {
 
   .membership-cards {
       justify-content: center;
-      align-items: flex-start; /* Align cards to the center in smaller screens */
+      align-items: flex-start; 
+      width: 100%;/* Align cards to the center in smaller screens */
   }
   
   .form-box {

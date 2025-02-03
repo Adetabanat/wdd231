@@ -302,6 +302,7 @@ footer div {
   .nav-links {
     display: none;
     flex-direction: column;
+    background-color: #444;
     position: absolute;
     top: 60px;
     right: 0;
@@ -312,6 +313,10 @@ footer div {
 
   .nav-links.active {
     display: flex;
+  }
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
   }
 
   .footer {

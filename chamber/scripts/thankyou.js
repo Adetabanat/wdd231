@@ -26,3 +26,25 @@ document.getElementById('email').textContent = urlParams.get('email') || "N/A";
 document.getElementById('phone').textContent = urlParams.get('phone') || "N/A";
 document.getElementById('organization').textContent = urlParams.get('organization') || "N/A";
 document.getElementById('timestamp').textContent = urlParams.get('timestamp') || "N/A";
+
+  // Set current year and last modified date
+const currentYearElement = document.getElementById("currentyear");
+if (currentYearElement) {
+  currentYearElement.textContent = new Date().getFullYear();
+}
+
+const lastModifiedElement = document.getElementById("lastModified");
+if (lastModifiedElement) {
+  lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
+}
+
+// Select the hamburger button and navigation links
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
+}
