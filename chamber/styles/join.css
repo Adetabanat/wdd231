@@ -25,7 +25,7 @@
   }
   .wayfinding{
     text-align: left;
-    font-size: large;
+    font-size: 2rem;
     color: black;
     
   }
@@ -99,12 +99,16 @@
   
   /* Main Section */
   main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
     text-align: center;
   }
-  
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
   /* Toggle Buttons */
   .toggle-buttons {
     margin-bottom: 1rem;
@@ -134,7 +138,136 @@
     border-radius: 5px;
     padding: 1em 1.5em;
   }
+  .form-box {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
   
+  .forms label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .forms input, .forms select, .forms textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #00843D;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #DA291C;
+  }
+  
+button:hover {
+  background-color: #DA291C;
+}
+
+.membership-cards {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    animation: fadeInUp 1s ease-in-out forwards;
+    justify-content: flex-start; /* Align to the left in large screens */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out
+  
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.membership-cards.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.membership-cards.show .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
   
   /* Footer Styles */
   .footer {
@@ -198,6 +331,7 @@
       width: 200px;
       padding: 10px 0;
       border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
   
     .nav-links.active {
@@ -217,6 +351,19 @@
     .footer div {
       margin-bottom: 20px;
     }
+
+    section {
+      flex-direction: column;
+  }
+
+  .membership-cards {
+      justify-content: center; /* Align cards to the center in smaller screens */
+  }
+  
+  .form-box {
+      width: 90%;
+      margin-bottom: 20px; /* Ensure space between form and cards */
+  }
   }
   
   @media (max-width: 480px) {
