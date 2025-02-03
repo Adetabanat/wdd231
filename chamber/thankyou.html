@@ -13,10 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/chamber2.css">
+  <link rel="stylesheet" href="styles/thanyou.css">
   <link rel="stylesheet" href="styles/normalize.css">
-  <script src="scripts/chamber2.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" >
+  <a href="index.html" class="home-link">Return to Home</a>
 </head>
 <body>
   <header> 
@@ -32,50 +33,29 @@
        <ul class="nav-links" id="nav-links">
          <li><a href="index.html" class="active">Home</a></li>
          <li><a href="#" class="active">Discovery</a></li>
-         <li><a href="join.html" class="active">Join</a></li>
+         <li><a href="#" class="active">Join</a></li>
          <li><a href="directory.html" class="active">Directory</a></li>
+         
        </ul>
      </nav>
    </header>
 
-  <main>
-    <h1 class="wayfinding"> Home </h1>
-    <section class="hero">
-      <img src="images/hero-small.webp" alt="Cocoa from Ghana" class="hero-image">
-      <div class="hero-content">
-        <h1>Welcome to the Daniel Chamber of Commerce</h1>
-        <p>Supporting local businesses and the community.</p>
-        <a href="join.html" class="cta-button">Join Us Today!</a>
-      </div>
-    </section>
+    <main>
+       <section class="thankyou-message">
+            <h2>We Appreciate Your Submission</h2>
+            <p>Your membership application has been received. Below is a summary of your submitted details:</p>
 
-    <div class="main-container">
-      <div class="weather-card">
-        <h2 id="town">Loading...</h2>
-        <img id="graphic" src="images/coat_of_arm1.webp" alt="Weather graphic">
-        <p id="description">Fetching weather data...</p>
-        <p id="temperature">--°C</p>
-      </div>
-
-      <div class="events">
-        <h2>Upcoming Events</h2>
-       <ul>
-          <li>No events currently available.</li>
-        </ul>
-      </div>
-     
-      <div class="empty">
-        <h2>Upcoming Events</h2>  
-          
-        <h2>No events currently available.</h2>
-      </div>
-    </div>
-      
-    
-      <h2>Company Member Spotlights</h2>
-      <div id="buscards" class="spotlight-container"></div>
-    
-  </main>
+            <div class="form-summary">
+                <p><strong>First Name:</strong> <span id="first-name"></span></p>
+                <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Organizational Title:</strong> <span id="organization-title"></span></p>
+                <p><strong>Mobile Number:</strong> <span id="phone"></span></p>
+                <p><strong>Business Name:</strong> <span id="organization"></span></p>
+                <p><strong>Submission Date:</strong> <span id="timestamp"></span></p>
+            </div>
+        </section>
+    </main>
 
   <footer class="footer">
     <div class="footer-address">

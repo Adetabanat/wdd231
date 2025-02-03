@@ -37,125 +37,86 @@
     </nav>
   </header>
   <main>
-    <h1 class="wayfinding"> Directory </h1>
-      <div class="join-cta-text">
-        <h1>
-          Elevate Your Business: Become a Proud Member of the Danny Chamber
-        </h1>
-      </div>
-    <section>
-      <div class="form-box">
-        <form action="thankyou.html" method="get"></form>
-      
-          <div class="forms">
-            <label class="top">
-              First Name 
-              <span class="asterisk">*</span>
-              <input type="text" name="first-name" title="Enter your first name" autocomplete="given-name" required>
-            </label>
 
-            <label class="top">
-              Last Name 
-              <span class="asterisk">*</span>
-              <input type="text" name="last-name" title="Enter your last name" autocomplete="family-name" required>
-            </label>
-
-            <label>
-              Organizational Title:
-              <input type="text" name="organization-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}" required>
-            </label>
-              
-            <label>
-              Email:
-              <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@domain.com" required>
-            </label>
-              
-            <label>
-              Mobile Phone:
-              <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
-            </label>
-              
-            <label>
-              Business/Organization Name:
-              <input type="text" name="organization" title="Enter your business or organization name" autocomplete="organization" required>
-            </label>
-    
-         
-            <label>
-              Membership Level:
+    <h1 class="wayfinding">Join Us</h1>
+    <div class="join-container">
+      <section class="join">
+        <div class="form-box">
+          <form action="thankyou.html" method="get">
+            <label>First Name * <input type="text" name="first-name" autocomplete="given-name" required></label>
+            <label>Last Name * <input type="text" name="last-name"  autocomplete="given-name"  required></label>
+            <label>Organizational Title <input type="text" name="organization-title" required></label>
+            <label>Email * <input type="email" name="email" autocomplete="given-name"></label>
+            <label>Mobile Phone * <input type="tel" name="phone" required></label>
+            <label>Business Name * <input type="text" name="organization" required></label>
+            <label>Membership Level
               <select name="membership" required>
-                <option value="np">NP Membership (Non-Profit, No Fee)</option>
-                <option value="bronze">Bronze Membership</option>
-                <option value="silver">Silver Membership</option>
-                <option value="gold">Gold Membership</option>
+                <option value="np">NP Membership</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
               </select>
             </label>
-            
-            <label>
-              Business/Organization Description:
-              <textarea name="description" title="Describe your business or organization"></textarea>
-            </label>
-            
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-            
-            <button type="submit">Submit Application</button>
+            <label>Description <textarea name="description"></textarea></label>
+            <input type="hidden" id="timestamp" name="timestamp">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        
+        <div class="membership-cards">
+          <div class="card" id="np-card" onclick="openModal('np-modal')">
+            <h2>NP Membership</h2>
+            <p>No fee.</p>
+            <button>Learn More</button>
           </div>
-        </form>
+          <div class="card" id="bronze-card" onclick="openModal('bronze-modal')">
+            <h2>Bronze</h2>
+            <p>Basic benefits.</p>
+            <button>Learn More</button>
+          </div>
+          <div class="card" id="silver-card" onclick="openModal('silver-modal')">
+            <h2>Silver</h2>
+            <p>Extra perks.</p>
+            <button>Learn More</button>
+          </div>
+          <div class="card" id="gold-card" onclick="openModal('gold-modal')">
+            <h2>Gold</h2>
+            <p>Premium benefits.</p>
+            <button>Learn More</button>
+          </div>
+        </div>
       </div>
-
-          <section class="membership-cards">
-              <div class="card" id="np-card">
-                  <h2>NP Membership</h2>
-                  <p>For non-profit organizations. No fee.</p>
-                  <button onclick="openModal('np-modal')">Learn More</button>
-              </div>
-              <div class="card" id="bronze-card">
-                  <h2>Bronze Membership</h2>
-                  <p>Basic membership with limited benefits.</p>
-                  <button onclick="openModal('bronze-modal')">Learn More</button>
-              </div>
-              <div class="card" id="silver-card">
-                  <h2>Silver Membership</h2>
-                  <p>Enhanced membership with extra perks.</p>
-                  <button onclick="openModal('silver-modal')">Learn More</button>
-              </div>
-              <div class="card" id="gold-card">
-                  <h2>Gold Membership</h2>
-                  <p>Premium membership with maximum benefits.</p>
-                  <button onclick="openModal('gold-modal')">Learn More</button>
-              </div>
-          </section>
-
-          <div id="np-modal" class="modal">
-              <div class="modal-content">
-                  <span class="close" onclick="closeModal('np-modal')">&times;</span>
-                  <h2>NP Membership Benefits</h2>
-                  <p>No fee, basic access to networking events.</p>
-              </div>
-          </div>
-          <div id="bronze-modal" class="modal">
-              <div class="modal-content">
-                  <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
-                  <h2>Bronze Membership Benefits</h2>
-                  <p>Discounts on events and limited advertising.</p>
-              </div>
-          </div>
-          <div id="silver-modal" class="modal">
-              <div class="modal-content">
-                  <span class="close" onclick="closeModal('silver-modal')">&times;</span>
-                  <h2>Silver Membership Benefits</h2>
-                  <p>Greater event discounts and more advertising space.</p>
-              </div>
-          </div>
-          <div id="gold-modal" class="modal">
-              <div class="modal-content">
-                  <span class="close" onclick="closeModal('gold-modal')">&times;</span>
-                  <h2>Gold Membership Benefits</h2>
-                  <p>Exclusive access to special events and premium advertising.</p>
-              </div>
-          </div>
-      </div>         
+  
+      <div id="np-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('np-modal')">&times;</span>
+          <h2>NP Membership Benefits</h2>
+          <p>Free networking events and limited exposure.</p>
+        </div>
+      </div>
+      <div id="bronze-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
+          <h2>Bronze Membership Benefits</h2>
+          <p>Discounted event access and small business advertising.</p>
+        </div>
+      </div>
+      <div id="silver-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('silver-modal')">&times;</span>
+          <h2>Silver Membership Benefits</h2>
+          <p>Greater event discounts and enhanced advertising opportunities.</p>
+        </div>
+      </div>
+      <div id="gold-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('gold-modal')">&times;</span>
+          <h2>Gold Membership Benefits</h2>
+          <p>Exclusive event invitations and premium advertising placement.</p>
+        </div>
+      </div>
     </section>
+      
   </main>
   <footer class="footer">
     <div class="footer-address">
