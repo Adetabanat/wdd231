@@ -4,61 +4,72 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtons = document.querySelectorAll(".close");
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
-  
+
     // Animate membership cards on load
     setTimeout(() => {
-      membershipCards.forEach(card => {
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-      });
+        membershipCards.forEach(card => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        });
     }, 300);
-  
+
     // Open modal function
     window.openModal = (modalId) => {
-      document.getElementById(modalId).style.display = "flex";
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "flex";
+        }
     };
-  
+
     // Close modal function
     window.closeModal = (modalId) => {
-      document.getElementById(modalId).style.display = "none";
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "none";
+        }
     };
-  
+
     // Close modals when clicking outside content
     modals.forEach(modal => {
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      });
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     });
-  
+
     // Close modals with close button
     closeButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        button.closest(".modal").style.display = "none";
-      });
+        button.addEventListener("click", () => {
+            button.closest(".modal").style.display = "none";
+        });
     });
-  
+
     // Hamburger menu toggle
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-  
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
+            }
+        });
+    }
+
     // Set current year in footer
-    document.getElementById("currentyear").textContent = new Date().getFullYear();
-  
+    const currentYearElement = document.getElementById("currentyear");
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
     // Set last modified date
-    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-  });
-
-  
-  // Select the hamburger button and navigation links
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-  });
-}
+    const lastModifiedElement = document.getElementById("lastModified");
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = "Last Modified: " + document.lastModified;
+    }
+});

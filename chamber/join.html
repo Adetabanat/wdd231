@@ -7,12 +7,14 @@
   <meta name="author" content="Daniel Adetaba Adongo">
   <meta property="og:title" content="GitHub - Adetabanat/wdd231">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/adetabanat/wdd231/refs/heads/main/chamber/images/natLogo.png">
+  <meta property="og:image" content="https://adetabanat.github.io/wdd231/chamber/images/natLogo.webp">
   <meta property="og:url" content="https://adetabanat.github.io/wdd231/chamber/index.html">
-  <title>Daniel Chamber of Commerce</title>
+  <title>Join Danny Chamber of Commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="preload" href="images/natLogo.png" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/join.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="styles/join.css">
   <script src="scripts/join.js" defer></script>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -21,7 +23,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="images/natLogo.png" alt="Nat Solutions logo">
+        <img src="images/natLogo.png" alt="Nat Solutions logo" loading="lazy">
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
         <span class="line"></span>
@@ -30,7 +32,7 @@
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="discovery.html" class="active">Discovery</a></li>
+        <li><a href="#" class="active">Discovery</a></li>
         <li><a href="join.html" class="active">Join</a></li>
         <li><a href="directory.html" class="active">Directory</a></li>
       </ul>
