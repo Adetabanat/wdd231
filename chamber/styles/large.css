@@ -1,0 +1,145 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .join-container {
+    grid-template-columns: 1fr;
+}
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer div {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-address p {
+    font-size: 0.8rem;
+  }
+
+  .social-media {
+    gap: 0.8rem;
+  }
+
+  .social-media a {
+    font-size: 1rem;
+  }
+  .hero-image {
+    width: 250px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-left: 2rem;
+    width: 10%;
+    height: auto;
+    position: relative;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 3rem;
+    margin: 0;
+    
+  }
+
+  .hero-image {
+    width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-left: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .weather-card, .events,.empty,.business-list {
+    flex-direction: column;
+  }
+
+  #buscards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  footer {
+    padding: 2rem;
+  }
+}
