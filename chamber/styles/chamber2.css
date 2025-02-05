@@ -4,8 +4,9 @@
   --secondary-color: whitesmoke;
   --tertiary-color: black;
   --default-color: #eef0f4;
-  --optional-color:lightblue;
+  --optional-color: lightblue;
   --optional2-color: #f90a39;
+  --text-color: black;
 }
 
 /* General reset */
@@ -24,6 +25,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .wayfinding {
@@ -39,6 +41,8 @@ body {
   background-color:var(--primary-color);
   color: whitesmoke;
   padding: 15px;
+  position: relative;
+  z-index: 1000;
 }
 h2{
   text-align: center;
@@ -85,13 +89,13 @@ h2{
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1001;
 }
 
 .hamburger .line {
   width: 100%;
   height: 3px;
-  background-color: black;
+  background-color: whitesmoke;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
@@ -140,7 +144,7 @@ footer div {
 }
 
 .footer a {
-  color: var(--text-color);
+  color: whitesmoke;
   text-decoration: none;
   margin: 0 5px;
 }
@@ -178,6 +182,8 @@ footer div {
     color: whitesmoke;
     justify-content: center;
     background-color:darkblue;
+    width: 100%;
+    padding: 3rem 0;
 }
 
 
@@ -318,6 +324,7 @@ footer div {
     text-align: center;
     padding: 10px 0;
   }
+  
 
   .footer {
     flex-direction: column;
@@ -341,6 +348,26 @@ footer div {
   .social-media a {
     font-size: 1rem;
   }
+  .hero-image {
+    width: 250px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-left: 2rem;
+    width: 10%;
+    height: auto;
+    position: relative;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
 
   header nav {
     display: flex;
