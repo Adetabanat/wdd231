@@ -8,14 +8,15 @@
   <meta property="og:title" content="GitHub - Adetabanat/wdd231">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/adetabanat/wdd231/refs/heads/main/chamber/images/natLogo.png">
-  <meta property="og:url" content="https://adetabanat.github.io/wdd231/chamber/directory.html">
+  <meta property="og:url" content="https://adetabanat.github.io/wdd231/chamber/discovery.html">
   <title>Daniel Chamber of Commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/large.css">
-  <script src="scripts/index.js" defer></script>
+  <script src="scripts/interest.js"></script>
+  <script src="scripts/index.js" defer > </script>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -38,16 +39,14 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <h1 class="wayfinding"> Directory </h1>
-    <h1>Daniel Chamber of Commerce</h1>
-    <div class="toggle-buttons">
-      <button id="grid-view">Grid View</button>
-      <button id="list-view">List View</button>
-    </div>
-    <section id="members-section">
-      <div id="members-container" class="grid-view"></div>
-    </section>
+  <main class="place_main">
+    <aside id="sidebar">
+      <h2>Last Visit</h2>
+      <p id="sidebar-content">Loading...</p>
+  </aside>
+  <section class="container" id="places-container">
+      <!-- Dynamic content will be loaded here -->
+  </section>
   </main>
   <footer class="footer">
     <div class="footer-address">

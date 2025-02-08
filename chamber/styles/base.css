@@ -7,14 +7,23 @@
     --optional-color:lightblue;
     --optional2-color: #f90a39;
     --text-color: black;
+    --calnder-text-color: #1d1d1d;
+    --bg-color: #f1f1fb;
   }
+/* Basic resets */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
+/* base settings */
+html {
+  font-size: 50%;
+  box-sizing: border-box;
+}
   /* Base Styles */
 body {
     font-family: "Montserrat", sans-serif;
@@ -22,16 +31,18 @@ body {
     color: #333;
     background-color: var(--default-color);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
+    font-size: 1.8rem;
   }
+
   .wayfinding{
     text-align: left;
     font-size: large;
     color: black;
     
   }
+  /* Header  */
+
   /* Navbar Styles */
   .navbar {
     display: flex;
@@ -102,35 +113,17 @@ body {
     transform: rotate(-45deg) translateY(-10px);
   }
   
-  /* Main Section */
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
+
   
-  /* Toggle Buttons */
-  .toggle-buttons {
-    margin-bottom: 1rem;
-  }
   
-  .toggle-buttons button {
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .toggle-buttons button:hover {
-    background-color: #1da1f2;
-  }
-  
+    /* Main Section */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    
   /* Footer Styles */
 .footer {
     display: flex;
@@ -177,3 +170,450 @@ body {
     color: #ecf0f1;
   }
   
+/* ----------------------------------------------------- */
+/* ---------------------- HOME PAGE SECTION --------------- */
+/* ----------------------------------------------------- */
+
+
+
+/* Main Section */
+main {
+  padding: 20px;
+}
+section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--tertiary-color);
+}
+
+
+
+/* Main content styles */
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+.hero {
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+    justify-content: center;
+    background-color:darkblue;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 8px;
+  
+}
+
+.hero-content p {
+  margin-bottom: 1rem;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.weather-card,
+.events,.empty
+{
+  background: var(--secondary-color);
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.card {
+  flex: 1;
+  background: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  background: var(--primary-color);
+  color: whitesmoke;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Weather Pseudo-element */
+.weather h2::after {
+  content: '\2601'; /* Cloud icon */
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+/* Spotlight Container */
+.spotlight-container {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/* Spotlight Card */
+.spotlight-card {
+  flex: 1;
+    background: var(--secondary-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* Hover effect */
+.spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.spotlight-card img {
+  width: 80px; /* Full width */
+  border-radius: 50%; /* Circular image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0;
+}
+
+/* Card Title */
+.spotlight-card h2 {
+  font-size: 1em;
+  margin: 0;
+  justify-content: center;
+}
+
+/* Card Paragraphs */
+.spotlight-card p {
+  font-size: 0.5em;
+  margin: 0;
+}
+
+  /* ----------------DIRECTORY PAGE SECTION --------------- */
+
+  /* Toggle Buttons */
+  .toggle-buttons {
+    margin-bottom: 1rem;
+  }
+  
+  .toggle-buttons button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-buttons button:hover {
+    background-color: #1da1f2;
+  }
+.cta-button {
+  display: inline-block;
+  background-color: darkblue;
+  color: whitesmoke;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: var(--optional2-color);
+}
+
+
+
+/* Grid and List Views */
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Member Card Styles */
+.member-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  text-align: left;
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.member-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card a {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.member-card a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* ----------------------------------------------------- */
+/* ---------------------- DISCOVERY PAGE SECTION --------------- */
+/* ----------------------------------------------------- */
+
+
+ /* JOIN SECTION */
+ .form-container .svg-box {
+   width: 45%;
+ }
+
+ .form-box form {
+   grid-template-columns: repeat(2, 1fr);
+ }
+
+ .form-box form .benefits-box {
+   display: grid;
+   /* grid-template-columns: repeat(2, 1fr); */
+ }
+
+ .form-box form .benefits-box div {
+   height: 70%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+
+/* ----------------------------------------------------- */
+/* ---------------------- JOIN PAGE SECTION --------------- */
+/* ----------------------------------------------------- */
+
+
+/* Main Section */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Form and Membership Section */
+.join-container {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--optional2-color);
+  outline: 2px solid var(--optional-color);
+}
+
+/* Membership Cards */
+.membership-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+.membership-cards h2 {
+color:whitesmoke;
+}
+.card {
+  max-width: 350px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  font-size: smaller;
+ 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/*  THANK YOU  */
+
+
+
+main  {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.thankyou-message {
+  background-color: white;
+  text-align: center;
+}
+
+.form-summary p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+strong {
+  color: #333;
+}
+
+
+
+.place_main {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-top: 20px;
+}
+#sidebar {
+  background-color: darkblue;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+} 
+
+
+#places-container {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  background-color: darkblue;
+  color: whitesmoke;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #005f73; 
+}
+
+

@@ -13,11 +13,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/chamber2.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/large.css">
   <link rel="stylesheet" href="styles/normalize.css">
-  <script src="scripts/chamber2.js" defer></script>
+  <script src="scripts/index.js" defer></script>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" >
 </head>
 <body>
@@ -33,7 +32,7 @@
        </button>
        <ul class="nav-links" id="nav-links">
          <li><a href="index.html" class="active">Home</a></li>
-         <li><a href="#" class="active">Discovery</a></li>
+         <li><a href="discovery.html" class="active">Discovery</a></li>
          <li><a href="join.html" class="active">Join</a></li>
          <li><a href="directory.html" class="active">Directory</a></li>
        </ul>
@@ -54,7 +53,7 @@
     <div class="main-container">
       <div class="weather-card">
         <h2 id="town">Loading...</h2>
-        <img id="graphic" src="images/coat_of_arm1.webp" alt="Weather graphic">
+        <img id="graphic" src="images/weather-icon.svg" alt="Weather graphic">
         <p id="description">Fetching weather data...</p>
         <p id="temperature">--°C</p>
       </div>
@@ -72,13 +71,12 @@
         <h2>No events currently available.</h2>
       </div>
     </div>
-      
     
       <h2>Company Member Spotlights</h2>
       <div id="buscards" class="spotlight-container"></div>
     
   </main>
-
+  
   <footer class="footer">
     <div class="footer-address">
       <p>Daniel Chamber of Commerce</p>
