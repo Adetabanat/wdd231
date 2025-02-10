@@ -1,28 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sidebarContent = document.getElementById("sidebar-content");
-    
-    // Get last visit timestamp from localStorage
-    const lastVisit = localStorage.getItem("lastVisit");
 
-    if (!lastVisit) {
-        sidebarContent.textContent = "Welcome! Let us know if you have any questions.";
-    } else {
-        const lastVisitDate = new Date(parseInt(lastVisit));
-        const currentDate = new Date();
-        const timeDifference = currentDate - lastVisitDate;
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    try {
+        const lastVisit = localStorage.getItem("lastVisit");
 
-        if (daysDifference < 1) {
-            sidebarContent.textContent = "Back so soon! Awesome!";
-        } else if (daysDifference === 1) {
-            sidebarContent.textContent = "You last visited 1 day ago.";
+        if (!lastVisit) {
+            sidebarContent.textContent = "Welcome! Let us know if you have any questions.";
         } else {
-            sidebarContent.textContent = `You last visited ${daysDifference} days ago.`;
-        }
-    }
+            const lastVisitDate = new Date(Number(lastVisit));
+            const currentDate = new Date();
+            const daysDifference = Math.floor((currentDate - lastVisitDate) / (1000 * 60 * 60 * 24));
 
-    // Store the current visit timestamp in localStorage
-    localStorage.setItem("lastVisit", Date.now().toString());
+            sidebarContent.textContent = daysDifference < 1
+                ? "Back so soon! Awesome!"
+                : `You last visited ${daysDifference} days ago.`;
+        }
+
+        localStorage.setItem("lastVisit", Date.now());
+    } catch (error) {
+        console.error("localStorage unavailable:", error);
+    }
 });
 
 
@@ -37,10 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 card.innerHTML = `
                     <h2>${place.name}</h2>
-                    <figure>
-                        <img src="${place.image}" alt="${place.name}" class="hover-effect">
-                    </figure>
-                    <address>${place.address}</address>
+                    <img src="${place.image}" alt="${place.name}" loading="lazy">
                     <p>${place.description}</p>
                     <button>Learn More</button>
                 `;

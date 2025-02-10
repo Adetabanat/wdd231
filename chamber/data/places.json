@@ -2,49 +2,49 @@
     "places": [
       {
         "name": "Cape Coast Castle",
-        "image": "castle.webp",
+        "image": "images/castle.webp",
         "address": "Cape Coast, Central Region, Ghana",
         "description": "A UNESCO World Heritage Site, this historic castle played a significant role in the transatlantic slave trade and offers a deep, sobering look into Ghana’s past."
       },
       {
         "name": "Kakum National Park",
-        "image": "kakum.webp",
+        "image": "images/kakum.webp",
         "address": "Abrafo, Central Region, Ghana",
         "description": "Famous for its canopy walkway suspended high above the rainforest, this park is home to diverse wildlife and breathtaking scenery."
       },
       {
         "name": "Mole National Park",
-        "image": "mole.webp",
+        "image": "images/mole.webp",
         "address": "West Gonja, Savannah Region, Ghana",
         "description": "Ghana’s largest wildlife park, where visitors can see elephants, antelopes, and leopards in their natural habitat."
       },
       {
         "name": "Independence Arch",
-        "image": "independence_arch.webp",
+        "image": "images/independent_arch.webp",
         "address": "Black Star Square, Accra, Ghana",
         "description": "A symbol of Ghana’s freedom from colonial rule, this iconic monument is a must-visit landmark in the capital city."
       },
       {
         "name": "Lake Bosomtwe",
-        "image": "lake.webp",
+        "image": "images/lake.webp",
         "address": "Ashanti Region, Ghana",
         "description": "Ghana’s only natural lake, formed by a meteor impact, is a peaceful retreat surrounded by lush hills and traditional fishing villages."
       },
       {
         "name": "Wli Waterfalls",
-        "image": "wli.webp",
+        "image": "images/wli-falls.webp",
         "address": "Volta Region, Ghana",
         "description": "The tallest waterfall in West Africa, offering a stunning natural spectacle surrounded by lush greenery."
       },
       {
         "name": "Nzulezu Stilt Village",
-        "image": "nzulezu_stilt_village.webp",
+        "image": "images/nzulezu.webp",
         "address": "Jomoro District, Western Region, Ghana",
         "description": "A picturesque village built entirely on stilts over Lake Tadane, showcasing the ingenuity of local communities."
       },
       {
         "name": "Boti Falls",
-        "image": "boti-falls.webp",
+        "image": "images/boti-falls.webp",
         "address": "Eastern Region, Ghana",
         "description": "A twin waterfall with cultural significance, believed to symbolize male and female energies, offering a breathtaking natural experience."
       }

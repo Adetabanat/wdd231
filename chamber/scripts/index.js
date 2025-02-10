@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all "Learn More" buttons
+  const openButtons = document.querySelectorAll(".modal-open");
+  const closeButtons = document.querySelectorAll(".modal-close");
+  const modals = document.querySelectorAll(".modal");
+
+  // Function to open a modal
+  openButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) modal.style.display = "flex";
+    });
+  });
+
+  // Function to close a modal
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const modal = e.target.closest(".modal");
+      if (modal) modal.style.display = "none";
+    });
+  });
+
+  // Close modal when clicking outside content
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+});
+
+
+
 // Set current year and last modified date
 const currentYearElement = document.getElementById("currentyear");
 if (currentYearElement) {
@@ -222,53 +257,59 @@ listViewButton.addEventListener("click", () => fetchMembers("list"));
 fetchMembers();
 
 
-// JOIN// 
+
+// Interest//
 document.addEventListener("DOMContentLoaded", () => {
-    const membershipCards = document.querySelectorAll(".membership-cards .card");
-    const modals = document.querySelectorAll(".modal");
-    const closeButtons = document.querySelectorAll(".close");
-    
+  const sidebarContent = document.getElementById("sidebar-content");
+  
+  // Get last visit timestamp from localStorage
+  const lastVisit = localStorage.getItem("lastVisit");
 
-    // Animate membership cards on load
-    setTimeout(() => {
-        membershipCards.forEach(card => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        });
-    }, 300);
+  if (!lastVisit) {
+      sidebarContent.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+      const lastVisitDate = new Date(parseInt(lastVisit));
+      const currentDate = new Date();
+      const timeDifference = currentDate - lastVisitDate;
+      const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-    // Open modal function
-    window.openModal = (modalId) => {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = "flex";
-        }
-    };
+      if (daysDifference < 1) {
+          sidebarContent.textContent = "Back so soon! Awesome!";
+      } else if (daysDifference === 1) {
+          sidebarContent.textContent = "You last visited 1 day ago.";
+      } else {
+          sidebarContent.textContent = `You last visited ${daysDifference} days ago.`;
+      }
+  }
 
-    // Close modal function
-    window.closeModal = (modalId) => {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = "none";
-        }
-    };
-
-    // Close modals when clicking outside content
-    modals.forEach(modal => {
-        modal.addEventListener("click", (event) => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-
-    // Close modals with close button
-    closeButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            button.closest(".modal").style.display = "none";
-        });
-    });
+  // Store the current visit timestamp in localStorage
+  localStorage.setItem("lastVisit", Date.now().toString());
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("data/places.json")
+      .then(response => response.json())
+      .then(data => {
+          const container = document.getElementById("places-container");
+          data.places.forEach(place => {
+              const card = document.createElement("div");
+              card.classList.add("card");
+
+              card.innerHTML = `
+                  <h2>${place.name}</h2>
+                  <figure>
+                      <img src="${place.image}" alt="${place.name}" class="hover-effect">
+                  </figure>
+                  <address>${place.address}</address>
+                  <p>${place.description}</p>
+                  <button>Learn More</button>
+              `;
+
+              container.appendChild(card);
+          });
+      })
+      .catch(error => console.error("Error loading places:", error));
+});
 
 
