@@ -85,7 +85,7 @@ const eventsListElement = document.getElementById("events-list");
 async function fetchCurrentWeather() {
   try {
     const response = await fetch(currentWeatherUrl);
-    if (!response.ok) throw new Error("Failed to fetch current weather data");
+    if (!response.ok) throw new Error(`Failed to fetch current weather: ${response.statusText}`);
 
     const data = await response.json();
     updateCurrentWeather(data);
@@ -101,7 +101,7 @@ async function fetchCurrentWeather() {
 async function fetchWeatherForecast() {
   try {
     const response = await fetch(forecastWeatherUrl);
-    if (!response.ok) throw new Error("Failed to fetch forecast data");
+    if (!response.ok) throw new Error(`Failed to fetch forecast: ${response.statusText}`);
 
     const data = await response.json();
     updateWeatherForecast(data);
@@ -127,7 +127,7 @@ function updateCurrentWeather(data) {
     : "";
 
   if (townElement) townElement.textContent = data.name ?? "Unknown";
-  if (graphicElement) {
+  if (graphicElement && weatherIcon) {
     graphicElement.src = weatherIcon;
     graphicElement.alt = currentDescription;
   }
