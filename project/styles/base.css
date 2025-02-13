@@ -182,6 +182,67 @@ body {
     font-size: 1rem;
     margin-bottom: 15px;
 }
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+/* Forms & Buttons */
+input, button, select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Output Section */
+.output {
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* Login Form */
+
+
+h2 {
+    color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+}
 /* Footer Styling */
 footer {
     background-color: #004c3f;
@@ -259,3 +320,127 @@ footer {
     }
   
 }
+
+
+
+/* User Selection Section */
+.user-section {
+    text-align: center;
+    margin: 30px 0;
+    justify-content: center;
+}
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.user-card {
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.user-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #0056b3;
+    padding: 5px;
+    background-color: white;
+}
+
+.user-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.user-card:hover {
+    transform: scale(1.1);
+}
+
+/* Thank You Page */
+.thank-you-container, .login-container,.contact{
+    text-align: center;
+    padding: 50px;
+    background: white;
+    margin: 50px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-container h1 {
+    color: #0056b3;
+}
+
+.thank-you-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.thank-you-container .btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.thank-you-container .btn:hover {
+    background-color: #218838;
+}
+
+
+/* User Welcome Message */
+#userWelcome {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-top: 20px;
+}
+
+/* Admin Controls Section */
+h3 {
+    text-align: center;
+    font-size: 22px;
+    color: whitesmoke;
+    margin-top: 20px;
+    background-color: #333;
+}
+
+/* Buttons Styling */
+button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #00408d;
+    transform: scale(0.98);
+}
+

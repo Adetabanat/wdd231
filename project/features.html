@@ -21,6 +21,7 @@
     
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <script src="scripts/index.js" defer></script>
+    <script src="scripts/features.js" defer></script>
 </head>
 <body>
     <header>
@@ -40,22 +41,43 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="dashboard.html" class="btn">Dashboard</a></li>
+                <li><a href="login.html" class="btn">login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Key Features</h2>
-            <ul>
-                <li>📚 **Student Record Management**</li>
-                <li>🕒 **Attendance Tracking**</li>
-                <li>📊 **Grading & Report Cards**</li>
-                <li>📢 **Teacher & Parent Communication**</li>
-                <li>💰 **Fees & Billing Management**</li>
-            </ul>
+      
+        <section class="user-section">
+            <h2>Select User Role</h2>
+            <div class="user-grid">
+                <div class="user-card" onclick="openUser('admin')">
+                    <img src="images/admin2.webp" alt="Admin">
+                    <p>Admin</p>
+                </div>
+                <div class="user-card" onclick="openUser('teacher')">
+                    <img src="images/teachers1.webp" alt="Teacher">
+                    <p>Teacher</p>
+                </div>
+                <div class="user-card" onclick="openUser('student')">
+                    <img src="images/student1.webp" alt="Student">
+                    <p>Student</p>
+                </div>
+                <div class="user-card" onclick="openUser('staff')">
+                    <img src="images/staff1.webp" alt="Staff">
+                    <p>Staff</p>
+                </div>
+            </div>
         </section>
+        
+        </section>
+        
+
+    
+        
+       
+
+        
     </main>
 
     <footer>

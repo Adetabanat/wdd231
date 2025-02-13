@@ -10,3 +10,66 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.setAttribute("aria-expanded", !expanded);
     });
 });
+
+class SchoolManagement {
+    constructor() {
+        this.students = [];
+    }
+
+    addStudent(name, grade, section) {
+        const id = this.students.length + 1;
+        this.students.push({
+            id, name, grade, section,
+            attendance: {},
+            grades: {},
+            communication: [],
+            billing: { totalFees: 0, paid: 0, due: 0 }
+        });
+    }
+
+    markAttendance(studentId, date, status) {
+        const student = this.students.find(s => s.id == studentId);
+        if (student) student.attendance[date] = status;
+    }
+
+    addGrade(studentId, subject, grade) {
+        const student = this.students.find(s => s.id == studentId);
+        if (student) student.grades[subject] = grade;
+    }
+
+    sendMessage(studentId, message) {
+        const student = this.students.find(s => s.id == studentId);
+        if (student) student.communication.push({ date: new Date().toISOString().split('T')[0], message });
+    }
+
+    updateBilling(studentId, totalFees, paid) {
+        const student = this.students.find(s => s.id == studentId);
+        if (student) {
+            student.billing.totalFees = totalFees;
+            student.billing.paid = paid;
+            student.billing.due = totalFees - paid;
+        }
+    }
+
+    showRecords() {
+        document.getElementById("output").innerHTML = this.students.map(student => `
+            <strong>ID:</strong> ${student.id} <br>
+            <strong>Name:</strong> ${student.name} <br>
+            <strong>Grade:</strong> ${student.grade} <br>
+            <strong>Section:</strong> ${student.section} <br>
+            <strong>Billing:</strong> ${JSON.stringify(student.billing)} <br><hr>
+        `).join("");
+    }
+}
+
+const school = new SchoolManagement();
+
+
+/*  Features */
+function openUser(role) {
+    alert("Opening " + role + " dashboard...");
+    // You can replace the alert with a navigation link
+    window.location.href = role + ".html";  // Redirects to admin.html, teacher.html, etc.
+}
+
+
