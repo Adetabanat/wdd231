@@ -40,14 +40,14 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="btn">login</a></li>
+                <li><a href="login.html" class="btn">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="contact">
-            <form action="thankyou.html" method="post">
+            <form action="thankyou.html" method="get">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
     
@@ -62,30 +62,24 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-           
-            <div> <p class="footer-text">&copy; 2025 School Management System | All Rights Reserved.</p>
-            </div>
-            
-    
-            <!-- Social Media Links with Images -->
-            <div class="social-icons">
-                <a href="https://web.facebook.com/daniel.nat1" target="_blank" aria-label="Facebook">
-                    <img src="images/facebook.svg" alt="Facebook">
-                </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                    <img src="images/twitter-new-logo-app-icon-logo-social-media-platform-logo-icon-new-twitter-logo-twitter-new-logo-app-icon-logo-social-305511820.webp" alt="Twitter">
-                </a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                    <img src="images/linkedin-with-circle.svg" alt="LinkedIn">
-                </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <img src="images/_89663605_instagram_logo_976.jpg" alt="Instagram">
-                </a>
-            </div>
+    <footer class="footer">
+        <div class="footer-address">
+          <p>Daniel Chamber of Commerce</p>
+          <p>St Augustine's College, Ghana</p>
+          <p>0244734362</p>
+          <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
         </div>
-    </footer>
+        <div class="social-media">
+          <a href="https://web.facebook.com/daniel.nat1" target="_blank">Facebook</a>
+          <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank">LinkedIn</a>
+          <a href="https://github.com/Adetabanat/wdd231" target="_blank">GitHub</a>
+        </div>
+        <div class="footer-info">
+          <p>WDD 231 Class Project</p>
+          <p>&copy; <span id="currentyear"></span> All rights reserved</p>
+          <p id="lastModified"></p>
+        </div>
+     </footer>
     
     
 </body>

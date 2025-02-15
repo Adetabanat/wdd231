@@ -72,4 +72,14 @@ function openUser(role) {
     window.location.href = role + ".html";  // Redirects to admin.html, teacher.html, etc.
 }
 
+// Highlight active navigation link
+const currentLocation = window.location.pathname.split("/").pop();
+const navItems = document.querySelectorAll("#nav-links a");
 
+navItems.forEach((item) => {
+  if (item.getAttribute("href") === currentLocation) {
+    item.classList.add("active");
+  } else {
+    item.classList.remove("active");
+  }
+});
