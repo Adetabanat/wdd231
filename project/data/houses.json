@@ -27,7 +27,7 @@
         "id": 5,
         "name": "St. Gabriel",
         "motto": "Messengers of Hope",
-        "image": "images/gabriel.webp"
+        "image": "images/stephens.webp"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "id": 10,
         "name": "St. Peter",
         "motto": "Faith and Leadership",
-        "image": "images/peter.webp"
+        "image":  "images/ndoum.webp"
     },
     {
         "id": 11,
