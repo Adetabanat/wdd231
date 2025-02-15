@@ -9,18 +9,21 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/adetabanat/wdd231/main/chamber/images/natLogo.png">
     <meta property="og:url" content="https://adetabanat.github.io/wdd231/chamber/index.html">
-    <title>Home | School Management System</title>
     
+    <title>Home | School Management System</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
-    
+
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <script src="scripts/index.js" defer></script>
+    <script src="scripts/houses.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,7 +31,7 @@
             <div class="logo">
                 <img src="images/logo.webp" alt="Nat SMS logo">
             </div>
-          
+
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -46,35 +49,41 @@
     </header>
 
     <main>
-        <h1 class="wayfinding"> About </h1>
         <section>
+            <h2>Houses at St. Augustine's College</h2>
+            <div class="house-container">
+                <div class="house" id="house1"></div>
+                <div class="house" id="house2"></div>
+                <div class="house" id="house3"></div>
+            </div>
+        </section>
+
+        <section class="about">
             <h2>Welcome to Our School Management System</h2>
             <p>Streamline student records, attendance, grading, and communication with our efficient management system.</p>
             <a href="features.html" class="btn">Learn More</a>
         </section>
     </main>
 
-  
     <footer class="footer">
         <div class="footer-address">
-          <p>Daniel Chamber of Commerce</p>
-          <p>St Augustine's College, Ghana</p>
-          <p>0244734362</p>
-          <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
+            <p>Daniel Chamber of Commerce</p>
+            <p>St. Augustine's College, Ghana</p>
+            <p>0244734362</p>
+            <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
         </div>
+
         <div class="social-media">
-          <a href="https://web.facebook.com/daniel.nat1" target="_blank">Facebook</a>
-          <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Adetabanat/wdd231" target="_blank">GitHub</a>
+            <a href="https://web.facebook.com/daniel.nat1" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Adetabanat/wdd231" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
+
         <div class="footer-info">
-          <p>WDD 231 Class Project</p>
-          <p>&copy; <span id="currentyear"></span> All rights reserved</p>
-          <p id="lastModified"></p>
+            <p>WDD 231 Class Project</p>
+            <p>&copy; <span id="currentyear"></span> All rights reserved</p>
+            <p id="lastModified"></p>
         </div>
-     </footer>
-    
-    
-    
+    </footer>
 </body>
 </html>

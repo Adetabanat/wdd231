@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 16,
+      "grade": "10th",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 17,
+      "grade": "11th",
+      "email": "jane@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Michael Brown",
+      "age": 15,
+      "grade": "9th",
+      "email": "michael@example.com"
+    }
+  ]
+  

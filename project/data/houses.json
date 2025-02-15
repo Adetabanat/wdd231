@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "St. George",
+        "motto": "Bravery and Honor",
+        "image": "images/stephens.webp"
+    },
+    {
+        "id": 2,
+        "name": "St. Michael",
+        "motto": "Strength and Justice",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 3,
+        "name": "St. Patrick",
+        "motto": "Faith and Courage",
+        "image": "images/joseph.webp"
+    },
+    {
+        "id": 4,
+        "name": "St. Raphael",
+        "motto": "Wisdom and Healing",
+        "image": "images/students.webp"
+    },
+    {
+        "id": 5,
+        "name": "St. Gabriel",
+        "motto": "Messengers of Hope",
+        "image": "images/gabriel.webp"
+    },
+    {
+        "id": 6,
+        "name": "St. Benedict",
+        "motto": "Peace and Discipline",
+        "image": "images/stephens.webp"
+    },
+    {
+        "id": 7,
+        "name": "St. Francis",
+        "motto": "Love and Kindness",
+        "image":"images/students.webp"
+    },
+    {
+        "id": 8,
+        "name": "St. Dominic",
+        "motto": "Truth and Knowledge",
+        "image": "images/stephens.webp"
+    },
+    {
+        "id": 9,
+        "name": "St. Augustine",
+        "motto": "Perseverance and Wisdom",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 10,
+        "name": "St. Peter",
+        "motto": "Faith and Leadership",
+        "image": "images/peter.webp"
+    },
+    {
+        "id": 11,
+        "name": "St. John",
+        "motto": "Compassion and Service",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 12,
+        "name": "St. Andrew",
+        "motto": "Courage and Humility",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 13,
+        "name": "St. Thomas",
+        "motto": "Faith and Inquiry",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 14,
+        "name": "St. Paul",
+        "motto": "Conviction and Strength",
+        "image": "images/ndoum.webp"
+    },
+    {
+        "id": 15,
+        "name": "St. James",
+        "motto": "Dedication and Honor",
+        "image": "images/ndoum.webp"
+    }
+]
