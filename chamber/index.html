@@ -40,7 +40,6 @@
    </header>
 
   <main>
-    <h1 class="wayfinding"> Home </h1>
     <section class="hero">
       <img src="images/hero5.webp" alt="Cocoa from Ghana" class="hero-image">
       <div class="hero-content">
@@ -49,51 +48,54 @@
         <a href="join.html" class="cta-button">Join Us Today!</a>
       </div>
     </section>
+   <section class="man">
+      <div class="main-container">
+        <div class="weather-card">
+          <h2 id="town">Loading...</h2>
+          <img id="graphic" src="images/weather-icon.svg" alt="Weather graphic">
+          <p id="description">Fetching weather data...</p>
+          <p id="temperature">--°C</p>
+        </div>
 
-    <div class="main-container">
-      <div class="weather-card">
-        <h2 id="town">Loading...</h2>
-        <img id="graphic" src="images/weather-icon.svg" alt="Weather graphic">
-        <p id="description">Fetching weather data...</p>
-        <p id="temperature">--°C</p>
-      </div>
-
-      <div class="events">
-        <h2>Upcoming Events</h2>
-       <ul>
-          <li>No events currently available.</li>
-        </ul>
-      </div>
-     
-      <div class="empty">
-        <h2>Upcoming Events</h2>  
+        <div class="events">
+          <h2>Upcoming Events</h2>
+        
+          <h2>No events currently available</h2>
           
-        <h2>No events currently available.</h2>
+        </div>
+      
+        <div class="empty">
+          <h2>Upcoming Events</h2>  
+            
+          <h2>No events currently available.</h2>
+        </div>
       </div>
-    </div>
-    
+   </section>
+   
+    <section class="spotCont">
       <h2>Company Member Spotlights</h2>
+
       <div id="buscards" class="spotlight-container"></div>
-    
-  </main>
+    </section>
+  </main>  
   
-  <footer class="footer">
-    <div class="footer-address">
-      <p>Daniel Chamber of Commerce</p>
-      <p>St Augustine's College, Ghana</p>
-      <p>0244734362</p>
-      <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
-    </div>
-    <div class="social-media">
-      <a href="https://web.facebook.com/daniel.nat1" target="_blank">Facebook</a>
-      <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Adetabanat/wdd231" target="_blank">GitHub</a>
-    </div>
-    <div class="footer-info">
-      <p>WDD 231 Class Project</p>
-      <p>&copy; <span id="currentyear"></span> All rights reserved</p>
-      <p id="lastModified"></p>
-    </div>
- </footer>
+    <footer class="footer">
+      <div class="footer-address">
+        <p>Daniel Chamber of Commerce</p>
+        <p>St Augustine's College, Ghana</p>
+        <p>0244734362</p>
+        <p><a href="mailto:danieladongonat@gmail.com">danieladongonat@gmail.com</a></p>
+      </div>
+      <div class="social-media">
+        <a href="https://web.facebook.com/daniel.nat1" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/in/daniel-adetaba-adongo-9901292a0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Adetabanat/wdd231" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <div class="footer-info">
+        <p>WDD 231 Class Project</p>
+        <p>&copy; <span id="currentyear"></span> All rights reserved</p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
 </body>
 </html>

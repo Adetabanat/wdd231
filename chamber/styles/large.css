@@ -11,38 +11,71 @@
     margin-top: 1rem;
   }
   .grid-view {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #444;
-    position: absolute;
-    top: 60px;
-    right: 0;
+  /* Member Card Styles */
+ .member-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  text-align: center;
+ }
+
+  .member-card img {
     width: 200px;
-    padding: 10px 0;
+    height: 150px;
     border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .member-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-card p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-card a {
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      padding: 10px 0;
+      border-radius: 5px;
   }
   .nav-links.active {
-    display: flex;
+      display: flex;
   }
   .nav-links li {
-    text-align: center;
-    padding: 10px 0;
+      text-align: center;
+      padding: 10px 0;
   }
   .join-container {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   }
   .footer {
-    flex-direction: column;
-    text-align: center;
+      flex-direction: column;
+      text-align: center;
   }
   .footer div {
     margin-bottom: 20px;
   }
   .footer-address p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .social-media {
     gap: 0.8rem;
@@ -66,35 +99,13 @@
     flex-direction: column;
     text-align: center;
   }
-}
 
-/* Medium Screens */
-@media (min-width: 768px) {
-  header nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-  .hover-effect:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
   .hero {
     flex-direction: row;
     text-align: left;
     padding: 3rem;
   }
-  .hero-image {
-    width: 50%;
-    height: auto;
-  }
-  .hero-content {
-    flex: 1;
-    padding-left: 2rem;
-  }
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
+
   .main-container {
     flex-direction: row;
     gap: 2rem;
@@ -119,13 +130,16 @@
     font-size: 3rem;
   }
   footer {
-    padding: 2rem;
+    padding-top: 10px;
+  }
+  footer p{
+    font-weight: 20px;
   }
 }
 
 /* Grid Layout for Various Screen Sizes */
 @media (min-width: 320px) and (max-width: 640px) {
-  .container {
+  .container, #member-container {
     grid-template-columns: 1fr;
     grid-template-areas:
       "card1"
@@ -140,7 +154,7 @@
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  .container {
+  .container #member-container  {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "card1 card2"
@@ -151,7 +165,7 @@
 }
 
 @media (min-width: 1025px) {
-  .container {
+  .container #member-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "card1 card2 card3 card4"
